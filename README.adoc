@@ -1,0 +1,4 @@
+OpenHealthCardApp
+-----------------
+
+iOS Anwendung um die Funktionsweise der OpenHealthCard Library zu demonstrieren
