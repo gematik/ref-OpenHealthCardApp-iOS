@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  DemoApp
+
+  Created by Adriaan Duijzer on 04.02.19.
+  
+*/
+"menuItem_cardReaderProviderTitle" = "CardReaderProvider";
+"menuItem_cardReaderTitle" = "CardReaders";
+"menuItem_emergencyNotesTitle" = "Notfalldaten";
+"menuItem_VSDTitle" = "VSD";
+
+"vc_cardReaderProviderTitle" = "Provider list";
+
+"crp_detail_name" = "Name";
+"crp_detail_desc" = "Description";
+"crp_detail_license" = "License";
+"crp_detail_class" = "Class";
+
+"vc_cardReaderTitle" = "Connected Card Readers";
+
+"cardReader_detail_name" = "Name";
+"cardReader_detail_card" = "Card";
+"cardReader_detail_card_present" = "present";
+"cardReader_detail_card_not_present" = "not present";
+"cardReader_detail_class" = "Class";
+"cardReader_detail_initialized" = "Initialized";
+
+"btn_connect" = "Connect";
+"btn_cancel" = "Cancel";
+"can_label" = "CAN";
+"nfc_start_pace_negotiation" = "Tap card to open secure PACE session";
+
+"error_title" = "Error";
+"success_title" = "Success";
+
+"btn_ok" = "OK";

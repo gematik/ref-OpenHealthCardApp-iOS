@@ -1,0 +1,78 @@
+name: DemoApp
+options:
+  bundleIdPrefix: de.gematik.ohcapp4ios
+settings:
+  base:
+    DEVELOPMENT_TEAM: A9FL89PFFL
+    VERSIONING_SYSTEM: "apple-generic"
+    CURRENT_PROJECT_VERSION: -1
+    SWIFT_VERSION: 5.0
+    ALWAYS_SEARCH_USER_PATHS: NO
+    FRAMEWORK_SEARCH_PATHS: "$(inherited)"
+  configs:
+    Release:
+      SWIFT_COMPILATION_MODE: wholemodule
+    Debug:
+      SWIFT_COMPILATION_MODE: incremental
+targets:
+  DemoApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    settings:
+      base:
+        SWIFT_VERSION: $(inherited)
+        ALWAYS_SEARCH_USER_PATHS: $(inherited)
+        PRODUCT_NAME: DemoApp
+        CODE_SIGN_ENTITLEMENTS: DemoApp/DemoApp.entitlements
+      Release:
+        SWIFT_COMPILATION_MODE: wholemodule
+      Debug:
+        SWIFT_COMPILATION_MODE: incremental
+    sources:
+      - DemoApp
+      - path: DemoApp/Generated/R.generated.swift
+        type: file
+    dependencies:
+      - carthage: DataKit
+      - carthage: GemCommonsKit
+      - carthage: ObjCCommonsKit
+      - carthage: CardReaderProviderApi
+      - carthage: CardReaderAccess
+      - carthage: Rswift
+      - carthage: Swinject
+      - carthage: SnapKit
+      - carthage: SwiftSocket
+      - carthage: NFCCardReaderProvider
+      - carthage: ASN1Kit
+      - carthage: BigInt
+      - carthage: BigIntExt
+      - carthage: HealthCardAccessKit
+      - carthage: HealthCardControlKit
+      - sdk: CoreNFC.framework
+    preBuildScripts:
+      - script: |
+                ${SRCROOT}/tools/rswift generate ${SRCROOT}/DemoApp/Generated/R.generated.swift
+        name: Run Script (R.swift)
+        inputFiles:
+          - $(TEMP_DIR)/rswift-lastrun
+        outputFiles:
+          - $(SRCROOT)/DemoApp/Generated/R.generated.swift
+    scheme:
+      testTargets:
+        - DemoAppTests
+        - DemoAppUITests
+      gatherCoverageData: true
+  DemoAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [DemoAppTests]
+    dependencies:
+      - target: DemoApp
+  DemoAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [DemoAppUITests]
+    dependencies:
+      - target: DemoApp
+buildImplicitDependencies: true
