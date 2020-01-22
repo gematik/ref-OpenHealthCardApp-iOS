@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD9365CEE296087B81D5EDE0C5CDC3E6"
+               BlueprintIdentifier = "CD9365CEE296087B81D5EDE0"
                BuildableName = "DemoApp.app"
                BlueprintName = "DemoApp"
                ReferencedContainer = "container:DemoApp.xcodeproj">
@@ -27,13 +27,14 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "NO"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "98E24D6FA44C1D3D84659D045F243ADF"
+               BlueprintIdentifier = "98E24D6FA44C1D3D84659D04"
                BuildableName = "DemoAppTests.xctest"
                BlueprintName = "DemoAppTests"
                ReferencedContainer = "container:DemoApp.xcodeproj">
@@ -43,7 +44,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73B6C59C9183F7E6489601F97221940C"
+               BlueprintIdentifier = "73B6C59C9183F7E6489601F9"
                BuildableName = "DemoAppUITests.xctest"
                BlueprintName = "DemoAppUITests"
                ReferencedContainer = "container:DemoApp.xcodeproj">
@@ -53,7 +54,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD9365CEE296087B81D5EDE0C5CDC3E6"
+            BlueprintIdentifier = "CD9365CEE296087B81D5EDE0"
             BuildableName = "DemoApp.app"
             BlueprintName = "DemoApp"
             ReferencedContainer = "container:DemoApp.xcodeproj">
@@ -63,6 +64,8 @@
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
+      <CodeCoverageTargets>
+      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -78,7 +81,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD9365CEE296087B81D5EDE0C5CDC3E6"
+            BlueprintIdentifier = "CD9365CEE296087B81D5EDE0"
             BuildableName = "DemoApp.app"
             BlueprintName = "DemoApp"
             ReferencedContainer = "container:DemoApp.xcodeproj">
@@ -99,7 +102,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD9365CEE296087B81D5EDE0C5CDC3E6"
+            BlueprintIdentifier = "CD9365CEE296087B81D5EDE0"
             BuildableName = "DemoApp.app"
             BlueprintName = "DemoApp"
             ReferencedContainer = "container:DemoApp.xcodeproj">

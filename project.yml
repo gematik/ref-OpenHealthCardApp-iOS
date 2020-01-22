@@ -3,8 +3,6 @@ options:
   bundleIdPrefix: de.gematik.ohcapp4ios
 settings:
   base:
-    DEVELOPMENT_TEAM: A9FL89PFFL
-    VERSIONING_SYSTEM: "apple-generic"
     CURRENT_PROJECT_VERSION: -1
     SWIFT_VERSION: 5.0
     ALWAYS_SEARCH_USER_PATHS: NO
