@@ -24,7 +24,7 @@ extension AppDelegate {
         //swiftlint:disable force_unwrapping
         let mContainer = Container()
 
-        /// Navigation Controller
+        // Navigation Controller
         mContainer.registerForController(NavigationController.self) { resolver, controller in
             controller.container = mContainer
             let main = resolver.resolve(MainViewController.self)!
@@ -32,7 +32,7 @@ extension AppDelegate {
         }.inObjectScope(.container)
         //swiftlint:disable:previous multiline_function_chains
 
-        /// MainViewController
+        // MainViewController
         mContainer.registerForController(MainViewController.self) { resolver, controller in
             controller.navigationItems = MainViewController.navigationItems
             controller.viewModelFactory = resolver.resolve(MenuItemViewModelFactory.self)
@@ -45,7 +45,7 @@ extension AppDelegate {
             resolver.resolve(NavigationController.self)!
         }
 
-        /// Card Reader Provider List ViewController
+        // Card Reader Provider List ViewController
         mContainer.registerForController(CardReaderProviderListViewController.self) { resolver, controller in
             controller.providerManager = resolver.resolve(CardReaderControllerManagerType.self)
             controller.viewModelFactory = resolver.resolve(ProviderDescriptorViewModelFactory.self)
@@ -59,7 +59,7 @@ extension AppDelegate {
             resolver.resolve(NavigationController.self)!
         }
 
-        /// CardReaderProviderDetailViewController
+        // CardReaderProviderDetailViewController
         mContainer.registerForController(CardReaderProviderDetailViewController.self) { (resolver, controller, descriptor: ProviderDescriptorType) in
             //swiftlint:disable:previous line_length
             controller.descriptor = descriptor
@@ -69,7 +69,7 @@ extension AppDelegate {
             LabeledDetailViewModelFactory()
         }
 
-        /// Card Reader List ViewController
+        // Card Reader List ViewController
         mContainer.registerForController(CardReaderListViewController.self) { resolver, controller in
             controller.providerManager = resolver.resolve(CardReaderControllerManagerType.self)
             controller.viewModelFactory = resolver.resolve(CardReaderViewModelFactory.self)
@@ -83,14 +83,14 @@ extension AppDelegate {
             resolver.resolve(NavigationController.self)!
         }
 
-        /// CardReaderDetailViewController
+        // CardReaderDetailViewController
         mContainer.registerForController(CardReaderDetailViewController.self) { (resolver, controller, cardReader: CardReaderType) in
             //swiftlint:disable:previous line_length
             controller.cardReader = cardReader
             controller.viewModelFactory = resolver.resolve(LabeledDetailViewModelFactory.self)
         }
 
-        /// CardReaderAccess
+        // CardReaderAccess
         mContainer.register(CardReaderControllerManagerType.self) { _ in
             CardReaderControllerManager.shared
         }

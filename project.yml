@@ -44,9 +44,8 @@ targets:
       - carthage: NFCCardReaderProvider
       - carthage: ASN1Kit
       - carthage: BigInt
-      - carthage: BigIntExt
-      - carthage: HealthCardAccessKit
-      - carthage: HealthCardControlKit
+      - carthage: HealthCardAccess
+      - carthage: HealthCardControl
       - sdk: CoreNFC.framework
     preBuildScripts:
       - script: |

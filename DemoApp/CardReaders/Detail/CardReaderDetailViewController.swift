@@ -16,8 +16,8 @@
 
 import CardReaderProviderApi
 import GemCommonsKit
-import HealthCardAccessKit
-import HealthCardControlKit
+import HealthCardAccess
+import HealthCardControl
 import NFCCardReaderProvider
 import SnapKit
 import UIKit
@@ -281,11 +281,12 @@ class CardReaderDetailViewController: UIViewController {
                 .on { [unowned self] event in
                     DLog("Event: \(event)")
                     event.fold(
-                            onComplete: { healthCard in
+                            onComplete: { (healthCard: HealthCardType) in
                                 DLog("Healthcard: \(healthCard)")
+                                let typeDescription = healthCard.status.type?.description ?? "unknown health card type"
                                 let alert = UIAlertController(
                                         title: R.string.localizable.success_title(),
-                                        message: nil,
+                                        message: R.string.localizable.success_message_with(typeDescription),
                                         preferredStyle: .alert
                                 )
                                 alert.addAction(UIAlertAction(
@@ -320,7 +321,6 @@ class CardReaderDetailViewController: UIViewController {
                             }
                     )
                 }
-
     }
 
     @objc

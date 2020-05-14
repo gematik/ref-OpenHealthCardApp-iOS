@@ -1,10 +1,9 @@
 # OpenHealthCardApp
 
-Application for demonstrating OpenHealthCard Library functionality.
+Application for demonstrating OpenHealthCardKit library functionality.
 
-For more info, please find the low level projects
-[HealthCardAccessKit](https://github.com/gematik/ref-HealthCardAccessKit) and
-[HealthCardControlKit](https://github.com/gematik/ref-HealthCardControlKit/) on GitHub.
+For more info, please find the low level project
+[OpenHealthCardKit](https://github.com/gematik/ref-OpenHealthCardKit) on GitHub.
 
 See the [Gematik GitHub IO](https://gematik.github.io/) page for a more general overview.
 

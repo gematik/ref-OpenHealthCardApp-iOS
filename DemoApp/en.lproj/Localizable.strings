@@ -1,9 +1,6 @@
 /* 
   Localizable.strings
   DemoApp
-
-  Created by Adriaan Duijzer on 04.02.19.
-  
 */
 "menuItem_cardReaderProviderTitle" = "CardReaderProvider";
 "menuItem_cardReaderTitle" = "CardReaders";
@@ -33,5 +30,6 @@
 
 "error_title" = "Error";
 "success_title" = "Success";
+"success_message_with" = "Successfully established secure communication with %@";
 
 "btn_ok" = "OK";

@@ -3,7 +3,7 @@ author: gematik GmbH
 author_url: http://www.gematik.de
 exclude: /*/internal*
 module: DemoApp
-github_url: http://www.github.com/gematik/openhealthcardapp-ios.git
+github_url: https://github.com/gematik/ref-OpenHealthCardApp-iOS
 theme: jony
 xcodebuild_arguments:
   - "-project"
