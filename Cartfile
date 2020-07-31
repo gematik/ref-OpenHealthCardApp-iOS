@@ -1,4 +1,4 @@
-github "gematik/ref-OpenHealthCardKit" ~> 1.0
+github "gematik/ref-OpenHealthCardKit" ~> 2.0
 github "SnapKit/SnapKit" "5.0.1"
 github "swiftsocket/SwiftSocket" "2e6ba27140a29fae8a6331ba4463312e0c71a6b0"
 github "mac-cain13/R.swift.Library" "v5.1.0"

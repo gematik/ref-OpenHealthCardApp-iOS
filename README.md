@@ -9,7 +9,7 @@ See the [Gematik GitHub IO](https://gematik.github.io/) page for a more general 
 
 ## Getting Started
 
-HealthCardControlKit requires Swift 5.1.
+The OpenHealthCardKit-DemoApp requires Swift 5.1.
 
 ### Setup for development
 
@@ -27,4 +27,4 @@ and [fastlane](https://fastlane.tools) to conveniently use the established devel
 # Card Reader Provider(s)
 
 Classes that implement `CardTerminalControllerProviderType` and extend `NSObject` can be used and found by the `CardReaderAccess.CardTerminalControllerManager`
-when they are either referenced by the Target project or defined in the [CardReaderProvider.m](DemoApp/CardReaderProvider.m)
+when they are either referenced by the Target project or defined in the [CardReaderProviderLoader.m](DemoApp/CardReaderProviderLoader.m)

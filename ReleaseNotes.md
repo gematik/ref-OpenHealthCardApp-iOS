@@ -1,3 +1,7 @@
+# Release 1.2.0
+- make use of Combine framework
+- update dependencies
+
 # Release 1.1.0
 - change dependencies from legacy projects to OpenHealthCardKit
 

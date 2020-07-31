@@ -15,6 +15,7 @@
 //
 
 import CardReaderProviderApi
+import Combine
 import GemCommonsKit
 import HealthCardAccess
 import HealthCardControl
@@ -23,7 +24,6 @@ import SnapKit
 import UIKit
 
 class CardReaderDetailViewController: UIViewController {
-    //swiftlint:disable:previous type_body_length
     var cardReader: CardReaderType!
     var viewModelFactory: LabeledDetailViewModelFactory!
 
@@ -276,33 +276,12 @@ class CardReaderDetailViewController: UIViewController {
         }
 
         card.openSecureSession(can: can)
-                .schedule(on: Executor.userInteractive)
-                .run(on: Executor.main)
-                .on { [unowned self] event in
-                    DLog("Event: \(event)")
-                    event.fold(
-                            onComplete: { (healthCard: HealthCardType) in
-                                DLog("Healthcard: \(healthCard)")
-                                let typeDescription = healthCard.status.type?.description ?? "unknown health card type"
-                                let alert = UIAlertController(
-                                        title: R.string.localizable.success_title(),
-                                        message: R.string.localizable.success_message_with(typeDescription),
-                                        preferredStyle: .alert
-                                )
-                                alert.addAction(UIAlertAction(
-                                        title: R.string.localizable.btn_ok(),
-                                        style: .default,
-                                        handler: nil)
-                                )
-                                self.present(alert, animated: true, completion: nil)
-                            },
-                            onCancelled: {
-                                DLog("Cancelled")
-                            },
-                            onTimedOut: {
-                                DLog("Timeout")
-                            },
-                            onError: { error in
+                .sink(
+                        receiveCompletion: { completion in
+                            switch completion {
+                            case .finished:
+                                DLog("Completed")
+                            case .failure(let error):
                                 DLog("Error: \(error)")
                                 if let nfcReader = self.cardReader as? NFCCardReader {
                                     nfcReader.invalidateSession(error: error.localizedDescription)
@@ -319,8 +298,23 @@ class CardReaderDetailViewController: UIViewController {
                                 )
                                 self.present(alert, animated: true, completion: nil)
                             }
-                    )
-                }
+                        },
+                        receiveValue: { (healthCard: HealthCardType) in
+                            DLog("Healthcard: \(healthCard)")
+                            let typeDescription = healthCard.status.type?.description ?? "unknown health card type"
+                            let alert = UIAlertController(
+                                    title: R.string.localizable.success_title(),
+                                    message: R.string.localizable.success_message_with(typeDescription),
+                                    preferredStyle: .alert
+                            )
+                            alert.addAction(UIAlertAction(
+                                    title: R.string.localizable.btn_ok(),
+                                    style: .default,
+                                    handler: nil)
+                            )
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                )
     }
 
     @objc
